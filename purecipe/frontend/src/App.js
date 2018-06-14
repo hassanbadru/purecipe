@@ -118,7 +118,7 @@ const SearchResult = (props) => {
 
             <ol>
               {
-                search_array.map((item, i) => (
+                search_array.slice(0, 20).map((item, i) => (
                   <li key={i} style={{color: 'black'}}>{item.title}</li>
                 )
                 )
