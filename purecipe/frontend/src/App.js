@@ -15,7 +15,7 @@ class App extends Component {
 
   addToList = (e) => {
 
-        if (e == "") {
+        if (e === "") {
           this.setState({search_array: []})
         } else {
 
@@ -103,7 +103,7 @@ const SearchResult = (props) => {
 
   // console.log(search_array)
 
-  if (search_array === undefined || search_array.length == 0) {
+  if (search_array === undefined || search_array.length === 0) {
 
     // array empty or does not exist
       return (
