@@ -9,14 +9,14 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {search_array: [], input: ''}
+    this.state = {search_array: undefined, input: ''}
   }
 
 
   addToList = (e) => {
 
         if (e === "") {
-          this.setState({search_array: []})
+          this.setState({search_array: undefined})
         } else {
 
 
@@ -102,8 +102,14 @@ const SearchResult = (props) => {
   let {search_array, input} = props
 
   // console.log(search_array)
+if (search_array === undefined){
+  return (
+    <div className="result_view" style={{height: 400, overflowY: 'auto'}}>
+      <span style={{color: 'black'}}>Start typing to Search</span>
+    </div>
+  )
 
-  if (search_array === undefined || search_array.length === 0) {
+} else if (search_array.length === 0) {
 
     // array empty or does not exist
       return (
