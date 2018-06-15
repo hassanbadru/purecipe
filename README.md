@@ -39,27 +39,39 @@ term, the list may update).
 ### Using Express as a proxy server an
 
 * React standalone app doesn't come with an actual server and thus unable to access APIs that have CORS-enabled
-* Express does this for us, by creating a new api route that fetches the API data by sending response headers.
+* Using Express, created a new API route that fetches the API data by sending response headers.
+```
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+```
 * Set the port to 3001
 * Run react app on port 3000
 ```
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 ```
-* Add express proxy to `package.json` of frontend
+* Add express proxy to `package.json` of frontend, after 'scripts' :
+```"proxy":"http://localhost:3001"```
+* Create search query from React app using the express proxy route
+`axios.get(`/api/?q=${e}`)`
+
 
 
 ## How the App Works
-#### No Search:
+#### 1) No Search:
 ![alt text](https://docs.google.com/uc?id=1OfOgWdloEvD6BziAwo85PhHHAqIUBULP "screenshot1")
 
 
 
-#### Search Result:
+#### 2) List Search Result:
 ![alt text](https://docs.google.com/uc?id=1esNgdUoWj_kUlZ_exMWe8ckz5O6Uhpmg "screenshot2")
 
 
-#### No Result Found
+
+#### 3) No Result Found:
 ![alt text](https://docs.google.com/uc?id=1s9MvR_HGWg03WGL6QxNSuFo6ETtAq5xk "screenshot3")
 
 
@@ -114,5 +126,8 @@ Hassan_PurePoint
     └── package.json
     
 ```
+
+## Scalability
+- This app is built for development to meet the requirements of the task in due time but can be easily updated & deployed to run on Heroku (or other services)
       
 
