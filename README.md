@@ -36,6 +36,9 @@ term, the list may update).
 * ##### REACT JS (Frontend)
 * ##### Node / Express (Backend/API)
 
+### External Library:
+* ##### Axios (API call)
+
 ## Configuration
 ### Using Express as a proxy server
 
@@ -53,13 +56,13 @@ router.use(function(req, res, next) {
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 ```
-* Add express proxy to `package.json` of frontend:
+* Added express proxy to `package.json` of frontend:
 ```"proxy":"http://localhost:3001"```
 
-* Create search query from React app using the express proxy route
+* Created search query from React app using the express proxy route
 `axios.get(`/api/?q=${e}`)`
 
-* Run react app on port `3000`: http://localhost:3000
+* Ran react app on port `3000`: http://localhost:3000
 
 
 ## How the App Works
