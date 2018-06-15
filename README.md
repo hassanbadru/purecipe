@@ -4,7 +4,6 @@
 A recipe finder app using the RecipePuppy API: `http://www.recipepuppy.com/about/api/`
 
 
-
 ## API Query:
 Users can type in a search query for the name of a recipe:
 
@@ -36,10 +35,21 @@ term, the list may update).
 * ##### REACT JS (Frontend)
 * ##### Node / Express (Backend/API)
 
+## Configuration
+### Using Express as a proxy server an
+
+* React standalone app doesn't come with an actual server and thus unable to access APIs that have CORS-enabled
+* Express does this for us, by creating a new api route that fetches the API data by sending response headers.
+* Set the port to 3001
+* Run react app on port 3000
+```
+var port = normalizePort(process.env.PORT || '3001');
+app.set('port', port);
+```
+* Add express proxy to `package.json` of frontend
+
+
 ## How the App Works
-### Using Express as proxy server an
-
-
 #### No Search:
 ![alt text](https://docs.google.com/uc?id=1OfOgWdloEvD6BziAwo85PhHHAqIUBULP "screenshot1")
 
