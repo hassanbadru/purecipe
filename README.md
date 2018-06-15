@@ -9,6 +9,7 @@ Users can type in a search query for the name of a recipe:
 
 **q** : normal search query
 ###### Example:
+To fetch all search query results for "omelet"
 `http://www.recipepuppy.com/api/?&q=omelet`
 
 
@@ -16,8 +17,8 @@ Users can type in a search query for the name of a recipe:
 - Download & unpack Hassan_Purepoint.zip file
 - Assuming you already have *Node* or *NPM*, while inside **purecipe** folder, install node_modules (express dependencies) using `npm install`
 - Go to the **frontend** folder, while within, install node_modules (frontend dependencies) using `npm install`  *(if not, check out [How to install Node ](https://nodejs.org/en/download/package-manager/))*
-- To start express server that fetches API, run the command `npm start` 
-- To run react, run the command `npm start` while inside **frontend** folder
+- **To Run Express server** that fetches API, run the command `npm start` 
+- **To Run React App**, run the command `npm start` while inside **frontend** folder
 - On your browser, go to http://localhost:3000 to run application
 
 
@@ -47,17 +48,18 @@ router.use(function(req, res, next) {
   next();
 });
 ```
-* Set the port to 3001
-* Run react app on port 3000
+* Set the express port to `3001`
 ```
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 ```
-* Add express proxy to `package.json` of frontend, after 'scripts' :
+* Add express proxy to `package.json` of frontend:
 ```"proxy":"http://localhost:3001"```
+
 * Create search query from React app using the express proxy route
 `axios.get(`/api/?q=${e}`)`
 
+* Run react app on port `3000`: http://localhost:3000
 
 
 ## How the App Works
