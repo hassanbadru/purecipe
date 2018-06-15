@@ -78,7 +78,7 @@ const SearchInput = (props) => {
 
   return (
 
-    <div className={"form"} style={{height: 200}}>
+    <div className="form" style={{height: 200}}>
 
       <h4>Find Your Favorite Recipe</h4>
 
@@ -105,7 +105,7 @@ const SearchResult = (props) => {
 if (search_array === undefined){
   return (
     <div className="result_view" style={{height: 400, overflowY: 'auto'}}>
-      <span style={{color: 'black'}}>Start typing to Search</span>
+      <span><i style={{color: 'grey'}}>Start typing to Search</i></span>
     </div>
   )
 
