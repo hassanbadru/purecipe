@@ -73,7 +73,7 @@ app.set('port', port);
 
 #### 2) List Search Result:
 ![alt text](https://docs.google.com/uc?id=1esNgdUoWj_kUlZ_exMWe8ckz5O6Uhpmg "screenshot2")
-
+A scroll is if list of results exceeds the display's height
 
 
 #### 3) No Result Found:
@@ -133,6 +133,6 @@ Hassan_PurePoint
 ```
 
 ## Scalability
-- This app is built for development to meet the requirements of the task in due time but can be easily updated & deployed to run on Heroku (or other services)
+- This app is built for development to meet the requirements of the task in a short time but can be easily updated & deployed to run on Heroku (or other services)
       
 
