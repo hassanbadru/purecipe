@@ -17,8 +17,8 @@ To fetch all search query results for "omelet"
 - Download & unpack Hassan_Purepoint.zip file
 - Assuming you already have *Node* or *NPM*, while inside **purecipe** folder, install node_modules (express dependencies) using `npm install`
 - Go to the **frontend** folder, while within, install node_modules (frontend dependencies) using `npm install`  *(if not, check out [How to install Node ](https://nodejs.org/en/download/package-manager/))*
-- **To Run Express server** that fetches API, run the command `npm start` 
-- **To Run React App**, run the command `npm start` while inside **frontend** folder
+- **To Run Express server** that fetches API, run the command `npm start` (*while inside **root** folder*)
+- **To Run React App**, run the command `npm start` (*while inside **frontend** folder*)
 - On your browser, go to http://localhost:3000 to run application
 
 
@@ -32,12 +32,12 @@ term, the list may update).
 
 
 ## Technology Stack Used
-* ##### HTML5 / CSS (root)
+* ##### HTML5 / CSS
 * ##### REACT JS (Frontend)
 * ##### Node / Express (Backend/API)
 
 ## Configuration
-### Using Express as a proxy server an
+### Using Express as a proxy server
 
 * React standalone app doesn't come with an actual server and thus unable to access APIs that have CORS-enabled
 * Using Express, created a new API route that fetches the API data by sending response headers.
